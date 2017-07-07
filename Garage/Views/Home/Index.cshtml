@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Garage 2.5</h1>
+    <p class="lead">För att knyta ihop databas­kursen samt sammanlänka den med .NET skall vi bygga om
+Garage2.0 till en ny version, 2.5. I denna version ska vi rota upp databasen och modifiera den
+till att vara mer lik en önskvärd databas i slutändan.</p>
+<!--    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Databaskrav</h2>
+        <p>För garage 2.5 ställs nya krav på databasen. Främst är att fordon inte längre ska lagra typ av
+            fordon som en sträng utan ha en relation till en annan tabell. Den tabellen ska ha namnet
+            ”Fordonstyp” och kopplas till Fordonstabellen. Även ägare ska vara en egen tabell och kopplas
+            som den passar.</p>
+        <p>Börja med att rita upp ett ERD för hur detta kan se ut och arbeta sedan på de nya modellerna i
+            MVC projektet!</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Informationskrav</h2>
+        <p>För att inte allmänheten skall ha access till och kunna ställa in vad som helst i ett garage skall ni
+generera (förslagsvis via seed­metoden) dessa Fordonstyper. Alltså fylla databasen med
+diverse fordonstyper och inte ge användaren en möjlighet att lägga till nya.</p>
+<p>
+Vid skapandet av nya Fordon, skall fordonstypsvalet göras med en dropdown­lista där enbart
+NAMNET på fordonstypen presenteras, alltså inte ID eller annan info.</p>
+<p>
+I vyn där samtliga fordon listas skall ni enbart visa en tabell med lite information. RegNr,
+Fordonstyp och max ett till attribut kan vara relevant, resterande är inte relevant vid en första
+anblick. Alla attribut utom ID skall dock presenteras då en användare klickar på ”details”.
+Således kan det kännas som att listan blir lite tom, därför skall ni skapa en ny view som heter
+”detailed list” där samtlig information(utom ID) om alla fordon printas ut.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Funktionskrav</h2>
+        <p>Det skall gå att söka på fordonstyp och regNr i samtliga list­vyer.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Garage.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Detailed List";
+}
+
+<h2>Detailed List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create") |
+    @Html.ActionLink("Overview", "")
+</p>
+<table class="table">
+    <tr>
+        <th>            @Html.DisplayNameFor(model => model.RegPlate)        </th>
+        <th>            @Html.DisplayNameFor(model => model.VehicleType.Name)        </th>
+        <th>            @Html.DisplayNameFor(model => model.Color)        </th>
+        <th>            @Html.DisplayNameFor(model => model.Owner.FullName)        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>                @Html.DisplayFor(modelItem => item.RegPlate)            </td>
+            <td>                @Html.DisplayFor(modelItem => item.VehicleType.Name)            </td>
+            <td>                @Html.DisplayFor(modelItem => item.Color)            </td>
+            <td>                @Html.DisplayFor(modelItem => item.Owner.FullName)            </td>
+
+
+            <td rowspan="2">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" style="border-top: 0">
+                <p>@Html.DisplayFor(modelItem => item.Information)</p>
+            </td>
+        </tr>
+    }
+
+</table>
